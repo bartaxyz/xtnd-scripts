@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsc --watch",
     "serve": "http-server | ssh -R 80:localhost:8080 serveo.net",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Warning: no test specified\"",
     "build": "tsc"
   },
   "repository": {
