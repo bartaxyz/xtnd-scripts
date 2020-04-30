@@ -128,9 +128,16 @@
     const carouselSection = document.getElementById(
       "carousel-section"
     ) as HTMLDivElement;
+
     if (carouselSection) {
       new Carousel(carouselSection);
     }
+
+    const carousels = document.querySelectorAll('[data-component="carousel"]');
+
+    [].forEach.bind(carousels, (carouselElement: HTMLDivElement) => {
+      new Carousel(carouselElement);
+    });
 
     // Inject SVG Icons
     const arrowRightWhiteElements = document.querySelectorAll(
