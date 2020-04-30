@@ -10,12 +10,14 @@ jobs:
     runs-on: ubuntu-latest    
     steps:
       - uses: actions/checkout@master
-    
+
+      # Setup Node
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
 
+      # Cache dependencies
       - name: Cache dependencies
         uses: actions/cache@v1
         with:
@@ -24,10 +26,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      # Install, test & build
       - run: npm ci
       - run: npm run test
       - run: npm run build
 
+      # Deploy bundle to mater-build branch
       - name: Deploy
         uses: s0/git-publish-subdir-action@master
         env:
@@ -35,3 +39,9 @@ jobs:
           BRANCH: master-build
           FOLDER: dist
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      # Purge the CDN to refresh the bundle
+      - name: Purge JSDelivr link
+        uses: wei/curl@master
+        with:
+          args: https://purge.jsdelivr.net/gh/bartaxyz/xtnd-scripts@master-build/bundle.js
