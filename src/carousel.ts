@@ -135,9 +135,9 @@
 
     const carousels = document.querySelectorAll('[data-component="carousel"]');
 
-    [].forEach.bind(carousels, (carouselElement: HTMLDivElement) => {
-      new Carousel(carouselElement);
-    });
+    for( let i = 0; i < carousels.length; ++i) {
+      new Carousel(carousels[i] as HTMLDivElement);
+    }
 
     // Inject SVG Icons
     const arrowRightWhiteElements = document.querySelectorAll(
