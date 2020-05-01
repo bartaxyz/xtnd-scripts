@@ -12,7 +12,7 @@
 
     initOnScroll() {
       window.addEventListener('scroll', () => {
-        if (scrollX === 0) {
+        if (scrollY === 0) {
           this.navigation.classList.add('transparent');
         } else {
           this.navigation.classList.remove('transparent');
