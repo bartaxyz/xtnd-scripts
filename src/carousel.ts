@@ -27,6 +27,10 @@
         "carousel-controls-handle-timer"
       );
 
+      this.carouselContent.addEventListener('click', () => {
+        this.increaseIndex();
+      });
+
       this.initElementStates();
       this.initEventListeners();
       this.setIndex(0);
