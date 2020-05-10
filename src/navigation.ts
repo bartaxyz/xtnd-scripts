@@ -7,17 +7,19 @@
     constructor(navigation: HTMLDivElement) {
       this.navigation = navigation;
 
-      this.initOnScroll();
+      this.initNavigation();
     }
 
-    initOnScroll() {
-      window.addEventListener('scroll', () => {
+    initNavigation() {
+      const callback = () => {
         if (scrollY === 0) {
-          this.navigation.classList.add('transparent');
+          this.navigation.classList.add("transparent");
         } else {
-          this.navigation.classList.remove('transparent');
+          this.navigation.classList.remove("transparent");
         }
-      })
+      };
+      window.addEventListener("scroll", callback);
+      window.addEventListener("DOMContentLoaded", callback);
     }
   }
 
