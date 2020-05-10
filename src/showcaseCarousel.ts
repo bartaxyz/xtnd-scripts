@@ -114,12 +114,14 @@
     updateControlsHandles() {
       [].forEach.call(
         this.controlsHandles,
-        (slide: HTMLElement, index: number) => {
-          // Hide all but the slide with the current index
+        (handle: HTMLElement, index: number) => {
+          // Hide all but the handle with the current index
           if (index === this.currentIndex) {
-            slide.style.opacity = "1";
+            handle.style.opacity = "1";
+            handle.style.height = "64px";
           } else {
-            slide.style.opacity = "0.4";
+            handle.style.opacity = "0.4";
+            handle.style.height = "48px";
           }
         }
       );
