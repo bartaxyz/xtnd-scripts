@@ -124,6 +124,12 @@
           }
         }
       );
+
+      // Set all timers to 0
+      [].forEach.call(
+        this.controlsHandleTimers,
+        (handleTimer: HTMLElement) => (handleTimer.style.flexGrow = "0")
+      );
     }
 
     updateCarouselContent() {
