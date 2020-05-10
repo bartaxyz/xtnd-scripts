@@ -28,9 +28,9 @@
       );
 
       // TODO: Check if this works nicely
-      // this.carouselContent.addEventListener("click", () => {
-      //   this.increaseIndex();
-      // });
+      this.carouselContent.addEventListener("click", () => {
+        this.increaseIndex();
+      });
 
       this.initElementStates();
       this.initEventListeners();
@@ -40,7 +40,6 @@
     }
 
     timerTick() {
-      return false;
       this.timer += 1000 / this.timerRefreshRate;
 
       if (this.timer > this.timerDuration) {
