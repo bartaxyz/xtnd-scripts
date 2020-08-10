@@ -75,7 +75,7 @@ const initReferralCandy = () => {
       ].join("\n")
     );
 
-    if (!orderName || !orderEmail || orderAmount) {
+    if (!orderName || !orderEmail || !orderAmount) {
       return false;
     }
 
