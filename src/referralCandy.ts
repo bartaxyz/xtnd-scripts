@@ -85,8 +85,6 @@ const initReferralCandy = () => {
   const interval = setInterval(() => {
     const elementsReady = checkOrderElementsReady();
 
-    console.log("elementsReady:", elementsReady);
-
     if (elementsReady) {
       clearInterval(interval);
 
