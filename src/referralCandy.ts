@@ -4,7 +4,8 @@ const initReferralCandy = () => {
   const appId = "nu1a0ru6vpnu7f3fr8ghiyt43";
   const accountSecret = "591621b6b1063c43604e71bdf8f00a96";
 
-  const timestamp = +new Date();
+  // Unix timestamp in seconds
+  const timestamp = Math.floor(Date.now() / 1000);
 
   let orderNameElement: HTMLSpanElement = null;
   let orderEmailElement: HTMLSpanElement = null;
