@@ -47,7 +47,7 @@ const initReferralCandy = () => {
 
     const wrapperDiv = document.createElement("div");
     wrapperDiv.innerHTML = generatedCode;
-    document.appendChild(wrapperDiv);
+    document.body.appendChild(wrapperDiv);
   };
 
   const getAmountFromCurrencyString = (amount: string) => {
