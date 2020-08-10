@@ -67,11 +67,13 @@ const initReferralCandy = () => {
     orderEmail = orderEmailElement.textContent.trim();
     orderAmount = orderAmountElement.textContent.trim();
 
-    console.log([
-      ["full name", orderName].join(":"),
-      ["email", orderEmail].join(":"),
-      ["amount", orderAmount].join(":"),
-    ]);
+    console.log(
+      [
+        ["full name", orderName].join(": "),
+        ["email", orderEmail].join(": "),
+        ["amount", orderAmount].join(": "),
+      ].join("\n")
+    );
 
     if (!orderName || !orderEmail || orderAmount) {
       return false;
@@ -82,12 +84,15 @@ const initReferralCandy = () => {
 
   const interval = setInterval(() => {
     const elementsReady = checkOrderElementsReady();
+
+    console.log("elementsReady:", elementsReady);
+
     if (elementsReady) {
       clearInterval(interval);
 
       initReferralCandyCode();
     }
-  }, 200);
+  }, 500);
 };
 
 if (location.pathname === "/order-confirmation") {
