@@ -34,8 +34,8 @@ class EmailModal {
         const { length } = this.mouseMoveHistory;
 
         if (
-          this.mouseMoveHistory[length] < 15 &&
-          this.mouseMoveHistory[length - 1] > this.mouseMoveHistory[length]
+          this.mouseMoveHistory[length - 1] < 15 &&
+          this.mouseMoveHistory[length - 2] > this.mouseMoveHistory[length - 1]
         ) {
           this.openModal();
         }
@@ -64,9 +64,9 @@ class EmailModal {
 }
 
 addEventListener("DOMContentLoaded", () => {
-  const carousels = document.querySelectorAll('[data-component="email-modal"]');
+  const emailModals = document.querySelectorAll('[data-component="email-modal"]');
 
-  for (let i = 0; i < carousels.length; ++i) {
-    new EmailModal(carousels[i] as HTMLDivElement);
+  for (let i = 0; i < emailModals.length; ++i) {
+    new EmailModal(emailModals[i] as HTMLDivElement);
   }
 });
