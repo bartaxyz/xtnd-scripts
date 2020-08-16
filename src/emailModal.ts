@@ -2,6 +2,8 @@ class EmailModal {
   emailModal: HTMLElement;
   emailModalCloseButton: HTMLElement[];
 
+  emailForm: HTMLFormElement;
+
   mouseMoveHistory: number[] = [];
 
   constructor(emailModal: HTMLDivElement) {
@@ -19,6 +21,12 @@ class EmailModal {
       closeButton.addEventListener("click", () => {
         this.closeModal();
       });
+    });
+
+    this.emailForm.querySelector('[data-component="email-form"]');
+
+    this.emailForm.addEventListener("submit", () => {
+      this.closeModal();
     });
 
     // Open modal if user on the page for more than 45 seconds
@@ -50,16 +58,18 @@ class EmailModal {
 
     sessionStorage.setItem("EmailModalOpened", "true");
 
-    this.emailModal.classList.add('open');
+    this.emailModal.classList.add("open");
   }
 
   closeModal() {
-    this.emailModal.classList.remove('open');
+    this.emailModal.classList.remove("open");
   }
 }
 
 addEventListener("DOMContentLoaded", () => {
-  const emailModals = document.querySelectorAll('[data-component="email-modal"]');
+  const emailModals = document.querySelectorAll(
+    '[data-component="email-modal"]'
+  );
 
   for (let i = 0; i < emailModals.length; ++i) {
     new EmailModal(emailModals[i] as HTMLDivElement);
