@@ -3,6 +3,8 @@
     emailModal: HTMLElement;
     emailModalCloseButton: HTMLElement[];
 
+    mouseMoveHistory: number[];
+
     constructor(emailModal: HTMLDivElement) {
       this.emailModal = emailModal;
 
@@ -20,15 +22,26 @@
         });
       });
 
+      // Open modal if user on the page for more than 45 seconds
       setTimeout(() => {
         this.openModal();
       }, 45000);
 
-      document.addEventListener("mousemove", (e) => {
-        if (e.clientY < 15) {
-          this.openModal();
-        }
-      });
+      // Only start listening to mousemove after 5 seconds
+      setTimeout(() => {
+        document.addEventListener("mousemove", (e) => {
+          this.mouseMoveHistory.push(e.clientY);
+
+          const { length } = this.mouseMoveHistory;
+
+          if (
+            this.mouseMoveHistory[length] < 15 &&
+            this.mouseMoveHistory[length - 1] > this.mouseMoveHistory[length]
+          ) {
+            this.openModal();
+          }
+        });
+      }, 5000);
     }
 
     openModal() {
