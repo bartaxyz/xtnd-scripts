@@ -50,16 +50,11 @@ class EmailModal {
 
     sessionStorage.setItem("EmailModalOpened", "true");
 
-    this.emailModal.style.display = "block";
-    this.emailModal.style.opacity = "1";
+    this.emailModal.classList.add('open');
   }
 
   closeModal() {
-    this.emailModal.style.opacity = "0";
-
-    setTimeout(() => {
-      this.emailModal.style.display = "none";
-    }, 250);
+    this.emailModal.classList.remove('open');
   }
 }
 
