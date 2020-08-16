@@ -31,12 +31,12 @@
   }
 
   addEventListener("DOMContentLoaded", () => {
-    const carousels = document.querySelectorAll(
+    const cartButtons = document.querySelectorAll(
       '[data-component="cart-button"]'
     );
 
-    for (let i = 0; i < carousels.length; ++i) {
-      new CartButton(carousels[i] as HTMLDivElement);
+    for (let i = 0; i < cartButtons.length; ++i) {
+      new CartButton(cartButtons[i] as HTMLDivElement);
     }
   });
 })();
