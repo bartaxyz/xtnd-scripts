@@ -23,8 +23,10 @@ class EmailModal {
       });
     });
 
-    this.emailModal.querySelector('[data-component="email-form"]');
-    this.emailForm.addEventListener("submit", () => {
+    this.emailForm = this.emailModal.querySelector(
+      '[data-component="email-form"]'
+    );
+    this.emailForm?.addEventListener("submit", () => {
       this.closeModal();
     });
 
