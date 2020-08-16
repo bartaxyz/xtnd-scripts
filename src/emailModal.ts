@@ -3,7 +3,7 @@
     emailModal: HTMLElement;
     emailModalCloseButton: HTMLElement[];
 
-    mouseMoveHistory: number[];
+    mouseMoveHistory: number[] = [];
 
     constructor(emailModal: HTMLDivElement) {
       this.emailModal = emailModal;
