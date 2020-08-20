@@ -11,7 +11,8 @@ class EmailModal {
 
     // @ts-ignore
     this.emailModal.style =
-      this.emailModal.style.cssText + `backdrop-filter: blur(40px);`;
+      this.emailModal.style.cssText +
+      `-webkit-backdrop-filter: blur(40px);backdrop-filter: blur(40px);`;
 
     this.emailModalCloseButton = Array.from(
       document.querySelectorAll('[data-component="email-modal-close-button"]')
