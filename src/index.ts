@@ -2,6 +2,7 @@ import "./carousel";
 import "./cartButton";
 import "./emailForm";
 import "./emailModal";
+import "./modalButton";
 import "./navigation";
 import "./scrollTop";
 import "./showcaseCarousel";
