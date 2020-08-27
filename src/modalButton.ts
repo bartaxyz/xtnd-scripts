@@ -28,6 +28,14 @@ class ModalButton {
       this.modal.style.cssText +
       `-webkit-backdrop-filter: blur(40px);backdrop-filter: blur(40px);`;
 
+    this.modal.addEventListener("click", (event) => {
+      if (event.currentTarget !== event.target) {
+        return;
+      }
+
+      this.modal.classList.remove("open");
+    });
+
     this.modalButton.addEventListener("click", () => {
       this.modal.classList.add("open");
     });
