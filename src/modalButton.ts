@@ -30,12 +30,10 @@ class ModalButton {
 
     this.modalButton.addEventListener("click", () => {
       this.modal.classList.add("open");
-      document.scrollingElement.classList.add("overflow-hidden");
     });
 
     this.modalCloseButton.addEventListener("click", () => {
       this.modal.classList.remove("open");
-      document.scrollingElement.classList.remove("overflow-hidden");
     });
   }
 }
