@@ -61,12 +61,10 @@ class EmailModal {
     sessionStorage.setItem("EmailModalOpened", "true");
 
     this.emailModal.classList.add("open");
-    document.scrollingElement.classList.add("overflow-hidden");
   }
 
   closeModal() {
     this.emailModal.classList.remove("open");
-    document.scrollingElement.classList.remove("overflow-hidden");
   }
 }
 
