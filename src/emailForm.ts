@@ -31,6 +31,12 @@
 
       emailForm.addEventListener("submit", () => {
         this.errorMessage.innerText = "";
+
+        // @ts-ignore
+        if (fbq) {
+          // @ts-ignore
+          fbq("track", "Lead");
+        }
       });
     }
   }
